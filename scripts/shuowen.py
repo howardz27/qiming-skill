@@ -21,7 +21,7 @@ import sys
 
 sys.path.insert(0, __file__.rsplit("/", 1)[0])
 
-from namelib import load_chars, load_shuowen
+from namelib import load_baihua, load_chars, load_shuowen
 from phonology import homophone_check
 from popularity import popularity_score
 
@@ -38,6 +38,9 @@ def _entry(ch, info, chars_lib, surname=None):
         "volume": info["volume"],
         "in_lib": ch in chars_lib,
     }
+    bh = load_baihua().get(ch)
+    if bh:
+        r["baihua"] = bh
     if info.get("variant_of"):
         r["variant_of"] = info["variant_of"]
     lib = chars_lib.get(ch)

@@ -98,3 +98,21 @@ def test_cli_surname_homophone_flag():
     hits = [e for e in d["entries"] if e["char"] == "风"]
     if hits:
         assert hits[0].get("homo_hits")  # 朱风≈猪疯，谐音命中被标注
+
+
+# ---------- 白话释义 ----------
+def test_baihua_coverage_and_quality():
+    from namelib import load_baihua
+    bh = load_baihua()
+    assert len(bh) > 7000  # 维基 + 新华两层
+    assert "诚然" in "".join(bh["洵"]["glosses"])  # 白话义项
+    ex = bh["洵"]["example"]
+    assert ex and "确实俊美" in ex["trans"]  # 例句带白话译文
+    # 新华补层标记
+    assert any(v.get("xinhua") for v in bh.values())
+
+
+def test_cli_char_includes_baihua():
+    d = _run("--char", "湜")
+    bh = d["entries"][0].get("baihua")
+    assert bh and any("清澈" in g for g in bh["glosses"])

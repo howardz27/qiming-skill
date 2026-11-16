@@ -74,3 +74,6 @@ def load_name_stats():
 
 def load_shuowen():
     return _load_json(os.path.join(KNOW, "shuowen.json"))["chars"]
+
+def load_baihua():
+    return _load_json(os.path.join(KNOW, "char_baihua.json"))["chars"]
