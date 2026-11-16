@@ -1,0 +1,478 @@
+{
+ "comment": "81数理吉凶表（姓名学五格数理，源自熊崎氏五格剖象法口径）。flags: leader=首领数, wealth=财富数, widow=孤寡数(女名慎用), gentle=温和数, art=艺才数。注意：此法学术界有争议，仅作可选评分维度。",
+ "numbers": {
+  "1": {
+   "luck": "大吉",
+   "summary": "天地开泰，万事成形",
+   "flags": [
+    "leader"
+   ]
+  },
+  "2": {
+   "luck": "凶",
+   "summary": "混沌未定，波澜重叠",
+   "flags": []
+  },
+  "3": {
+   "luck": "大吉",
+   "summary": "进取如意，名利两全",
+   "flags": []
+  },
+  "4": {
+   "luck": "凶",
+   "summary": "万事劳苦，进退不遂",
+   "flags": []
+  },
+  "5": {
+   "luck": "大吉",
+   "summary": "阴阳和合，生意兴隆",
+   "flags": [
+    "gentle"
+   ]
+  },
+  "6": {
+   "luck": "大吉",
+   "summary": "天德地祥，安稳吉庆",
+   "flags": [
+    "gentle"
+   ]
+  },
+  "7": {
+   "luck": "吉",
+   "summary": "刚毅果断，勇往直前",
+   "flags": []
+  },
+  "8": {
+   "luck": "吉",
+   "summary": "意志坚固，勤勉发展",
+   "flags": []
+  },
+  "9": {
+   "luck": "凶",
+   "summary": "兴尽凶始，穷乏之数",
+   "flags": []
+  },
+  "10": {
+   "luck": "凶",
+   "summary": "万事终局，空虚无聊",
+   "flags": []
+  },
+  "11": {
+   "luck": "大吉",
+   "summary": "枯木逢春，稳健着实",
+   "flags": [
+    "gentle"
+   ]
+  },
+  "12": {
+   "luck": "凶",
+   "summary": "意志薄弱，家庭寂寞",
+   "flags": []
+  },
+  "13": {
+   "luck": "大吉",
+   "summary": "智略超群，博学多才",
+   "flags": []
+  },
+  "14": {
+   "luck": "凶",
+   "summary": "沦落天涯，多破兆",
+   "flags": []
+  },
+  "15": {
+   "luck": "大吉",
+   "summary": "福寿圆满，雅量厚重",
+   "flags": [
+    "wealth",
+    "gentle"
+   ]
+  },
+  "16": {
+   "luck": "大吉",
+   "summary": "贵人相助，众望所归",
+   "flags": [
+    "leader",
+    "wealth"
+   ]
+  },
+  "17": {
+   "luck": "吉",
+   "summary": "突破万难，刚柔兼备",
+   "flags": []
+  },
+  "18": {
+   "luck": "吉",
+   "summary": "有志竟成，功名可期",
+   "flags": []
+  },
+  "19": {
+   "luck": "凶",
+   "summary": "风云蔽月，辛苦重来",
+   "flags": []
+  },
+  "20": {
+   "luck": "凶",
+   "summary": "非业破运，空费心力",
+   "flags": []
+  },
+  "21": {
+   "luck": "大吉",
+   "summary": "明月中天，万物确立",
+   "flags": [
+    "leader",
+    "widow"
+   ]
+  },
+  "22": {
+   "luck": "凶",
+   "summary": "秋草逢霜，怀才不遇",
+   "flags": []
+  },
+  "23": {
+   "luck": "大吉",
+   "summary": "旭日东升，壮丽壮观",
+   "flags": [
+    "leader",
+    "widow"
+   ]
+  },
+  "24": {
+   "luck": "大吉",
+   "summary": "家门余庆，金钱丰盈",
+   "flags": [
+    "wealth",
+    "gentle"
+   ]
+  },
+  "25": {
+   "luck": "吉",
+   "summary": "英俊刚毅，资性聪敏",
+   "flags": []
+  },
+  "26": {
+   "luck": "凶",
+   "summary": "变怪奇异，波澜重叠",
+   "flags": [
+    "widow"
+   ]
+  },
+  "27": {
+   "luck": "凶",
+   "summary": "欲望无止，宜养柔德",
+   "flags": []
+  },
+  "28": {
+   "luck": "凶",
+   "summary": "阔水浮萍，豪杰气概",
+   "flags": [
+    "widow"
+   ]
+  },
+  "29": {
+   "luck": "半吉",
+   "summary": "智谋兼备，欲望难足",
+   "flags": [
+    "wealth",
+    "widow"
+   ]
+  },
+  "30": {
+   "luck": "半吉",
+   "summary": "吉凶参半，投机之数",
+   "flags": []
+  },
+  "31": {
+   "luck": "大吉",
+   "summary": "智勇得志，可享清福",
+   "flags": [
+    "leader",
+    "gentle"
+   ]
+  },
+  "32": {
+   "luck": "大吉",
+   "summary": "侥幸多望，贵人得助",
+   "flags": [
+    "wealth",
+    "gentle"
+   ]
+  },
+  "33": {
+   "luck": "大吉",
+   "summary": "旭日升天，鸾凤相会",
+   "flags": [
+    "leader",
+    "wealth",
+    "widow"
+   ]
+  },
+  "34": {
+   "luck": "凶",
+   "summary": "破家亡身，见识短小",
+   "flags": []
+  },
+  "35": {
+   "luck": "吉",
+   "summary": "温和平静，优雅发展",
+   "flags": [
+    "gentle"
+   ]
+  },
+  "36": {
+   "luck": "凶",
+   "summary": "波澜重叠，侠肝义胆",
+   "flags": []
+  },
+  "37": {
+   "luck": "吉",
+   "summary": "权威显达，猛虎添翼",
+   "flags": []
+  },
+  "38": {
+   "luck": "半吉",
+   "summary": "磨铁成针，刻意经营",
+   "flags": [
+    "art"
+   ]
+  },
+  "39": {
+   "luck": "大吉",
+   "summary": "富贵荣华，财帛丰盈",
+   "flags": [
+    "wealth",
+    "widow"
+   ]
+  },
+  "40": {
+   "luck": "半吉",
+   "summary": "谨慎保安，豪胆迈进",
+   "flags": []
+  },
+  "41": {
+   "luck": "大吉",
+   "summary": "德望高大，健全平和",
+   "flags": [
+    "leader",
+    "wealth"
+   ]
+  },
+  "42": {
+   "luck": "半吉",
+   "summary": "博识多能，精通世情",
+   "flags": [
+    "art"
+   ]
+  },
+  "43": {
+   "luck": "半吉",
+   "summary": "雨夜之花，外祥内苦",
+   "flags": []
+  },
+  "44": {
+   "luck": "凶",
+   "summary": "愁眉难展，事不如意",
+   "flags": []
+  },
+  "45": {
+   "luck": "大吉",
+   "summary": "新生泰和，顺风扬帆",
+   "flags": []
+  },
+  "46": {
+   "luck": "凶",
+   "summary": "载宝沉舟，浪里淘金",
+   "flags": []
+  },
+  "47": {
+   "luck": "吉",
+   "summary": "花开之象，万事如意",
+   "flags": [
+    "wealth"
+   ]
+  },
+  "48": {
+   "luck": "吉",
+   "summary": "青松立鹤，德智兼备",
+   "flags": []
+  },
+  "49": {
+   "luck": "凶",
+   "summary": "吉临则吉，凶来则凶",
+   "flags": []
+  },
+  "50": {
+   "luck": "半吉",
+   "summary": "一成一败，吉凶互见",
+   "flags": []
+  },
+  "51": {
+   "luck": "半吉",
+   "summary": "盛衰交加，波澜起伏",
+   "flags": []
+  },
+  "52": {
+   "luck": "大吉",
+   "summary": "先见之明，理想实现",
+   "flags": [
+    "wealth"
+   ]
+  },
+  "53": {
+   "luck": "凶",
+   "summary": "外祥内忧，先富后贫",
+   "flags": []
+  },
+  "54": {
+   "luck": "凶",
+   "summary": "多难悲运，忧闷频来",
+   "flags": []
+  },
+  "55": {
+   "luck": "半吉",
+   "summary": "外美内苦，善克难关",
+   "flags": []
+  },
+  "56": {
+   "luck": "凶",
+   "summary": "浪里行舟，历尽艰辛",
+   "flags": []
+  },
+  "57": {
+   "luck": "吉",
+   "summary": "寒雪青松，夜莺吟春",
+   "flags": []
+  },
+  "58": {
+   "luck": "半吉",
+   "summary": "先苦后甘，宽宏扬名",
+   "flags": []
+  },
+  "59": {
+   "luck": "凶",
+   "summary": "寒蝉悲风，意志宜坚",
+   "flags": []
+  },
+  "60": {
+   "luck": "凶",
+   "summary": "无谋之人，黑暗无光",
+   "flags": []
+  },
+  "61": {
+   "luck": "吉",
+   "summary": "名利双收，修德养性",
+   "flags": []
+  },
+  "62": {
+   "luck": "凶",
+   "summary": "衰败之象，内外不和",
+   "flags": []
+  },
+  "63": {
+   "luck": "吉",
+   "summary": "万物化育，繁荣之象",
+   "flags": [
+    "gentle"
+   ]
+  },
+  "64": {
+   "luck": "凶",
+   "summary": "骨肉分离，孤独悲愁",
+   "flags": []
+  },
+  "65": {
+   "luck": "吉",
+   "summary": "富贵长寿，室家欢乐",
+   "flags": [
+    "gentle"
+   ]
+  },
+  "66": {
+   "luck": "凶",
+   "summary": "内外不和，多欲失福",
+   "flags": []
+  },
+  "67": {
+   "luck": "吉",
+   "summary": "通达之数，万商云集",
+   "flags": [
+    "wealth"
+   ]
+  },
+  "68": {
+   "luck": "吉",
+   "summary": "顺风吹帆，智虑周密",
+   "flags": []
+  },
+  "69": {
+   "luck": "凶",
+   "summary": "非业之数，动摇不安",
+   "flags": []
+  },
+  "70": {
+   "luck": "凶",
+   "summary": "残菊经霜，暗淡无光",
+   "flags": []
+  },
+  "71": {
+   "luck": "半吉",
+   "summary": "石上金花，内心劳苦",
+   "flags": []
+  },
+  "72": {
+   "luck": "凶",
+   "summary": "劳苦愁闷，外祥内苦",
+   "flags": []
+  },
+  "73": {
+   "luck": "半吉",
+   "summary": "志高力微，宜养精神",
+   "flags": []
+  },
+  "74": {
+   "luck": "凶",
+   "summary": "坐食山空，沉迷逸乐",
+   "flags": []
+  },
+  "75": {
+   "luck": "半吉",
+   "summary": "守则可安，进取多险",
+   "flags": []
+  },
+  "76": {
+   "luck": "凶",
+   "summary": "倾覆离散，宜静守常",
+   "flags": []
+  },
+  "77": {
+   "luck": "半吉",
+   "summary": "先苦后甜，宽宏大量",
+   "flags": []
+  },
+  "78": {
+   "luck": "半吉",
+   "summary": "晚景凄凉，功德光明",
+   "flags": []
+  },
+  "79": {
+   "luck": "凶",
+   "summary": "云头望月，身疲力尽",
+   "flags": []
+  },
+  "80": {
+   "luck": "凶",
+   "summary": "凶星入度，清本缩小",
+   "flags": []
+  },
+  "81": {
+   "luck": "吉",
+   "summary": "万物回春，还元复始",
+   "flags": []
+  }
+ },
+ "note_luck_scale": {
+  "大吉": 1.0,
+  "吉": 0.8,
+  "半吉": 0.55,
+  "凶": 0.15
+ }
+}

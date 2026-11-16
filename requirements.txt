@@ -1,0 +1,2 @@
+pypinyin>=0.51
+sxtwl>=2.0.6

@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+# 17MB 第三方语料（wainshine/Chinese-Names-Corpus），不入库；产物 real_name_freq.json 已在 knowledge/
+data/real_names/
