@@ -29,6 +29,14 @@ RAW_DIR = os.path.join(BASE, "data", "shuowen", "data")
 OUT = os.path.join(BASE, "knowledge", "shuowen.json")
 T2S = OpenCC("t2s")
 
+# 后起通行字 → 说文立条字（古今字/本字/或体，人工考据；目标键均须存在于产物）
+# 数据集自身未建索引、需人工接驳的对：雪之说文字头为古体䨮；悦/智经典作说/知（古今字）；
+# 皓/辉/朵/柳/昊 为说文头之今通行写法；其为本为箕之古文。
+MANUAL_ALIASES = {
+    "雪": "䨮", "悦": "说", "智": "知", "皓": "晧", "辉": "𪸩",
+    "朵": "朶", "柳": "桺", "昊": "昦", "其": "箕",
+}
+
 
 def main():
     files = sorted((f for f in os.listdir(RAW_DIR) if f.endswith(".json")),
@@ -36,6 +44,9 @@ def main():
     chars = {}
     conflicts = []
     variants = 0
+    # 两遍构建：第一遍登记全部主字头（本字优先于别名），第二遍登记别名，
+    # 避免「先出现的别名占位导致后到的本字条目被整条跳过」（如 叡 被 璿 的索引抢占）
+    entries = []  # (simplified, head, entry_dict, alias_simplifieds)
     for fn in files:
         with open(os.path.join(RAW_DIR, fn), encoding="utf-8") as f:
             d = json.load(f)
@@ -61,15 +72,27 @@ def main():
             "fanqie": d.get("pronunciation") or "",
             "volume": d.get("volume") or "",
         }
-        # 或体/古文异体字：登记到 variants 键下，保证按异体查得到
-        for v in d.get("variants") or []:
-            vh = (v.get("wordhead") or "").strip()
-            if not vh:
-                continue
-            vs = T2S.convert(vh)
-            if len(vs) == 1 and vs not in chars:
-                chars[vs] = dict(chars[simplified], variant_of=simplified)
+        # 或体/古文异体字 + indexes 通行字索引（含现代通行写法，
+        # 如 澂→[澂,澄]、夝→[夝,晴]、瞑→[瞑,眠]）
+        alias_heads = [v.get("wordhead") for v in d.get("variants") or []]
+        alias_heads += d.get("indexes") or []
+        aliases = []
+        for vh in alias_heads:
+            vs = T2S.convert((vh or "").strip())
+            if len(vs) == 1 and vs != simplified:
+                aliases.append(vs)
+        entries.append((simplified, head, chars[simplified], aliases))
+    for simplified, head, entry, aliases in entries:
+        for vs in aliases:
+            if vs not in chars:
+                chars[vs] = dict(entry, variant_of=simplified)
                 variants += 1
+    # 第三遍：人工考据的古今字/本字对照
+    manual = 0
+    for alias, target in MANUAL_ALIASES.items():
+        if alias not in chars and target in chars:
+            chars[alias] = dict(chars[target], variant_of=target)
+            manual += 1
 
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump({"comment": "说文解字训释；来源 shuowenjiezi/shuowen (Apache-2.0)；"
@@ -78,8 +101,8 @@ def main():
                    "total": len(chars),
                    "conflicts": conflicts,
                    "chars": chars}, f, ensure_ascii=False)
-    print(f"读取 {len(files)} 条 → 唯一简体字头 {len(chars)}（含异体 {variants}），"
-          f"繁简映射冲突 {len(conflicts)} -> {OUT}")
+    print(f"读取 {len(files)} 条 → 唯一简体字头 {len(chars)}（含异体 {variants} + "
+          f"人工对照 {manual}），繁简映射冲突 {len(conflicts)} -> {OUT}")
 
 
 if __name__ == "__main__":

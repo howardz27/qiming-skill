@@ -125,7 +125,7 @@ python scripts/sample.py --infer "朱晚晴,朱竹露"             # 反推 vibe
 - `knowledge/numerology/`：81数理、康熙笔画表、五行规则
 - `knowledge/zodiac_rules.json`：12生肖宜忌字根与冲合刑害
 - `knowledge/name_stats.json`：重名统计（公安部《二〇二一年全国姓名报告》官方最新：50热字/男女Top10名/存量单双字名Top10）
-- `knowledge/shuowen.json`：《说文解字》全量训释（10874 简体字头，来源 shuowenjiezi/shuowen，Apache-2.0）：字头/部首/原文(繁)/gloss(简)/拼音/反切/卷次；供说文解字模式按字义检索，经 scripts/shuowen.py 使用
+- `knowledge/shuowen.json`：《说文解字》全量训释（11139 简体字头，来源 shuowenjiezi/shuowen，Apache-2.0）：字头/部首/原文(繁)/gloss(简)/拼音/反切/卷次；含或体异体、indexes 通行字别名（澄→澂/晴→夝/眠→瞑）与人工考据古今字对照（雪→䨮/悦→说/智→知/其→箕），`variant_of` 指向本字条目；东汉后起字（汐/玥/曦/婷等）说文未收，检索不到属正常；供说文解字模式按字义检索，经 scripts/shuowen.py 使用
 - `knowledge/homophone_blocklist.json`：谐音敏感词表
 
 ## 边界与诚实性

@@ -44,6 +44,21 @@ def test_simplified_keys():
     assert all(len(k) == 1 for k in sw)
 
 
+def test_alias_and_manual_mapping():
+    from namelib import load_shuowen
+    sw = load_shuowen()
+    # indexes 通行字索引自动别名：澄→澂、晴→夝、眠→瞑
+    assert "澄" in sw and sw["澄"]["variant_of"] == "澂"
+    assert "晴" in sw and sw["晴"]["wordhead"] == "夝"
+    # 人工考据古今字/本字对照：雪→䨮、悦→说、智→知、其→箕
+    assert "凝雨" in sw["雪"]["gloss"]
+    assert sw["悦"]["variant_of"] == "说"
+    assert sw["智"]["wordhead"] == "知"
+    assert sw["其"]["wordhead"] == "箕"
+    # 本字优先于别名：叡 不得被 璿 的索引抢占
+    assert sw["叡"]["wordhead"] == "叡" and sw["睿"]["variant_of"] == "叡"
+
+
 # ---------- CLI ----------
 def test_cli_char_lookup():
     d = _run("--char", "洵")
