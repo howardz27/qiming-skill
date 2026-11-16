@@ -71,3 +71,6 @@ def load_name_blocklist():
 
 def load_name_stats():
     return _load_json(os.path.join(KNOW, "name_stats.json"))
+
+def load_shuowen():
+    return _load_json(os.path.join(KNOW, "shuowen.json"))["chars"]
